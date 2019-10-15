@@ -1,0 +1,28 @@
+#Oakkar Win
+#oakkar.win1@marist.edu
+#traffic light with functions
+
+from graphics import *
+#window
+win = GraphWin("Traffic Light" , 300 , 300)
+#coordinates
+def drawTrafficLight(x , y):
+    drawLightBody(x , y , 40 , 80)
+    drawLamp("red" , 140 , 80 , 20)
+    drawLamp("yellow" , 140 , 120 , 20)
+    drawLamp("green" , 140 , 160 , 20)
+
+def drawLamp(color , x , y , radius):
+    lamp = Circle(Point(x , y) , radius)
+    lamp.setFill(color)
+    lamp.draw(win)
+
+def drawLightBody(x , y , length , width):
+    body = Rectangle(Point(x , y) , Point(width , length))
+    body.setFill("white")
+    body.draw(win)
+
+def main():
+    drawTrafficLight( 200 , 200)
+
+main()
